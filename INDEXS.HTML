@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Le Marcel Cafe & Bakery - Artisan coffee, handcrafted sandwiches, sourdough pizzas, and indulgent desserts." />
+    <title>Le Marcel Cafe & Bakery | Good Coffee. Great Food.</title>
+
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+
+    <!-- ===== OPEN GRAPH / SOCIAL META TAGS ===== -->
+    <meta property="og:title" content="Le Marcel Cafe & Bakery | Good Coffee. Great Food." />
+    <meta property="og:description" content="Artisan coffee, handcrafted sandwiches, sourdough pizzas, and indulgent desserts." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=80" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://lemarcel.com" />
+    <meta property="og:type" content="restaurant" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Le Marcel Cafe & Bakery | Good Coffee. Great Food." />
+    <meta name="twitter:description" content="Artisan coffee, handcrafted sandwiches, sourdough pizzas, and indulgent desserts." />
+
+    <!-- ===== STRUCTURED DATA (JSON-LD) ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Le Marcel Cafe & Bakery",
+        "description": "Artisan coffee, handcrafted sandwiches, sourdough pizzas, and indulgent desserts.",
+        "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=80",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Café Street, Food District",
+            "addressLocality": "Mumbai",
+            "addressRegion": "Maharashtra",
+            "postalCode": "400001",
+            "addressCountry": "IN"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "19.0760",
+            "longitude": "72.8777"
+        },
+        "telephone": "+919876543210",
+        "openingHours": "Mo-Su 08:00-23:00",
+        "priceRange": "₹₹",
+        "servesCuisine": ["Cafe", "Bakery", "Pizza", "Sandwiches", "Coffee"],
+        "hasMenu": "https://lemarcel.com/menu",
+        "acceptsReservations": "true",
+        "sameAs": [
+            "https://instagram.com/lemarcel",
+            "https://facebook.com/lemarcel"
+        ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS & Swiper -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <style>
+        /* ----- ROOT & GLOBAL ----- */
+        :root {
+            --ivory: #F8F4ED;
+            --espresso: #3A2922;
+            --beige: #D8B98A;
+            --charcoal: #1D1B1A;
+            --gold: #B9955B;
+            --gold-light: #D4B88C;
+            --white: #FFFFFF;
+            --heading: 'Playfair Display', serif;
+            --body: 'Inter', sans-serif;
+            --transition-smooth: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --shadow-sm: 0 2px 20px rgba(58, 41, 34, 0.06);
+            --shadow-md: 0 8px 40px rgba(58, 41, 34, 0.08);
+            --shadow-lg: 0 16px 60px rgba(58, 41, 34, 0.12);
+            --shadow-hover: 0 20px 80px rgba(58, 41, 34, 0.16);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--body);
+            color: var(--espresso);
+            background: var(--ivory);
+            line-height: 1.8;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: var(--heading);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        .section-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: inline-block;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+            position: relative;
+        }
+        .section-label::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+        .section-label::after {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+            margin-left: 12px;
+            vertical-align: middle;
+        }
+        .section-heading {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--espresso);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .section-subheading {
+            font-size: 1.1rem;
+            color: #6B6B6B;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-weight: 300;
+        }
+        .btn-premium {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 1rem 2.8rem;
+            background: var(--espresso);
+            color: var(--white);
+            border: 1px solid var(--espresso);
+            border-radius: 0;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gold);
+            transition: left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: -1;
+        }
+        .btn-premium:hover {
+            color: var(--white);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(185, 149, 91, 0.3);
+        }
+        .btn-premium:hover::before { left: 0; }
+        .btn-gold {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+        .btn-gold::before { background: var(--espresso); }
+        .btn-gold:hover { border-color: var(--espresso); }
+        .btn-outline {
+            background: transparent;
+            color: var(--espresso);
+            border-color: var(--espresso);
+        }
+        .btn-outline::before { background: var(--espresso); }
+        .btn-outline:hover { color: var(--white); border-color: var(--espresso); }
+        section { padding: 7rem 0; }
+        @media (max-width: 768px) {
+            section { padding: 4.5rem 0; }
+            .section-heading { font-size: 2.2rem; }
+            .section-label::before, .section-label::after { width: 15px; }
+        }
+
+        /* ----- PRELOADER ----- */
+        .preloader {
+            position: fixed;
+            inset: 0;
+            background: var(--ivory);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .preloader-spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--beige);
+            border-top-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ----- NAVIGATION ----- */
+        .navbar-le {
+            padding: 1.2rem 0;
+            transition: var(--transition-smooth);
+            background: transparent;
+        }
+        .navbar-le.scrolled {
+            background: rgba(248, 244, 237, 0.98);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 2px 40px rgba(0,0,0,0.06);
+            padding: 0.7rem 0;
+        }
+        .brand-main {
+            font-family: var(--heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--white);
+            line-height: 1.1;
+            transition: var(--transition-smooth);
+        }
+        .brand-sub {
+            font-family: var(--body);
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            color: var(--beige);
+            text-transform: uppercase;
+            display: block;
+            font-weight: 400;
+            transition: var(--transition-smooth);
+        }
+        .navbar-le.scrolled .brand-main { color: var(--espresso); }
+        .navbar-le.scrolled .brand-sub { color: var(--gold); }
+
+        .nav-link {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.85) !important;
+            margin: 0 0.8rem;
+            position: relative;
+            transition: var(--transition-smooth);
+            padding: 0.5rem 0;
+            font-weight: 400;
+        }
+        .navbar-le.scrolled .nav-link { color: var(--espresso) !important; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1.5px;
+            background: var(--gold);
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link:hover { color: var(--gold) !important; }
+
+        .btn-reserve-nav {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            padding: 0.7rem 2rem;
+            background: var(--gold);
+            color: var(--white) !important;
+            border: 1px solid var(--gold);
+            border-radius: 0;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            font-weight: 500;
+        }
+        .btn-reserve-nav::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--espresso);
+            transition: left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: -1;
+        }
+        .btn-reserve-nav:hover {
+            color: var(--white) !important;
+            border-color: var(--espresso);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(185, 149, 91, 0.3);
+        }
+        .btn-reserve-nav:hover::before { left: 0; }
+
+        /* ----- BACK TO TOP ----- */
+        .back-to-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-md);
+            z-index: 999;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* ----- COOKIE BANNER ----- */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            z-index: 9999;
+            transform: translateY(100%);
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+        .cookie-banner p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            flex: 1;
+            min-width: 200px;
+        }
+        .cookie-banner .btn-premium {
+            padding: 0.5rem 1.5rem;
+            font-size: 0.65rem;
+        }
+        .cookie-banner .btn-outline {
+            border-color: rgba(255,255,255,0.3);
+            color: var(--white);
+        }
+        .cookie-banner .btn-outline::before {
+            background: var(--white);
+        }
+        .cookie-banner .btn-outline:hover {
+            color: var(--charcoal);
+            border-color: var(--white);
+        }
+        @media (max-width: 576px) {
+            .cookie-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+        }
+
+        /* ----- MOBILE BOTTOM BAR ----- */
+        .mobile-bottom-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: 0 -4px 30px rgba(0,0,0,0.06);
+            padding: 0.7rem 0;
+            z-index: 1040;
+            justify-content: space-around;
+            border-top: 1px solid rgba(58, 41, 34, 0.05);
+        }
+        .mobile-bottom-bar a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--espresso);
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: var(--transition-smooth);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            opacity: 0.6;
+            font-weight: 500;
+        }
+        .mobile-bottom-bar a i { font-size: 1.2rem; color: var(--gold); margin-bottom: 0.15rem; transition: var(--transition-smooth); }
+        .mobile-bottom-bar a.active, .mobile-bottom-bar a:hover { opacity: 1; color: var(--gold); }
+        .mobile-bottom-bar a:hover i { transform: translateY(-3px) scale(1.1); }
+        @media (max-width: 768px) {
+            .mobile-bottom-bar { display: flex; }
+            body { padding-bottom: 75px; }
+        }
+
+        /* ----- HERO ----- */
+        .hero {
+            height: 100vh;
+            min-height: 750px;
+            background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1920&q=80') center/cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26, 23, 22, 0.8) 0%, rgba(58, 41, 34, 0.6) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--white);
+            max-width: 900px;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .hero-content h1 {
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin: 1.5rem 0;
+            opacity: 0;
+            animation: heroFadeUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            opacity: 0;
+            animation: heroFadeUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s forwards;
+        }
+        .hero-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--beige);
+            text-transform: uppercase;
+            opacity: 0;
+            animation: heroFadeUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s forwards;
+            font-weight: 400;
+        }
+        .hero-buttons {
+            opacity: 0;
+            animation: heroFadeUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s forwards;
+        }
+        @keyframes heroFadeUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn-hero-primary, .btn-hero-outline {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 1rem 2.8rem;
+            border-radius: 0;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .btn-hero-primary {
+            background: var(--gold);
+            color: var(--white);
+            border: 1px solid var(--gold);
+        }
+        .btn-hero-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            transition: left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: -1;
+        }
+        .btn-hero-primary:hover {
+            color: var(--espresso);
+            border-color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(185, 149, 91, 0.3);
+        }
+        .btn-hero-primary:hover::before { left: 0; }
+        .btn-hero-outline {
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.6);
+        }
+        .btn-hero-outline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            transition: left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: -1;
+        }
+        .btn-hero-outline:hover {
+            color: var(--espresso);
+            border-color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(255,255,255,0.1);
+        }
+        .btn-hero-outline:hover::before { left: 0; }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            text-align: center;
+            color: var(--white);
+            opacity: 0;
+            animation: heroFadeUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s forwards;
+        }
+        .scroll-indicator span {
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+        .scroll-line {
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(to bottom, var(--beige), transparent);
+            margin: 0 auto;
+            animation: scrollPulse 2.5s ease-in-out infinite;
+        }
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+            50% { opacity: 1; transform: scaleY(1); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3rem; }
+            .hero-content p { font-size: 1rem; }
+        }
+
+        /* ----- FOOD CARDS ----- */
+        .food-card {
+            background: var(--white);
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-smooth);
+            height: 100%;
+            position: relative;
+        }
+        .food-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        .food-card-img {
+            height: 230px;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+        .food-card:hover .food-card-img { transform: scale(1.06); }
+        .food-card-body { padding: 1.8rem 1.8rem 2rem; }
+        .food-card-title {
+            font-family: var(--heading);
+            font-size: 1.3rem;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+        .food-card-desc {
+            font-size: 0.9rem;
+            color: #8A8A8A;
+            margin-bottom: 0.8rem;
+            font-weight: 300;
+        }
+        .food-card-price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--gold);
+            font-family: var(--heading);
+        }
+        .badge-popular {
+            background: var(--gold);
+            color: var(--white);
+            font-size: 0.5rem;
+            letter-spacing: 0.15em;
+            padding: 0.35rem 1.2rem;
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            border-radius: 0;
+            text-transform: uppercase;
+            font-weight: 500;
+            animation: badgePulse 3s ease-in-out infinite;
+        }
+        @keyframes badgePulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(185, 149, 91, 0.4); }
+            50% { opacity: 0.85; box-shadow: 0 0 0 8px rgba(185, 149, 91, 0); }
+        }
+
+        /* ----- COFFEE SECTION ----- */
+        .coffee-section {
+            background: var(--espresso);
+            color: var(--white);
+            position: relative;
+        }
+        .coffee-section .section-heading { color: var(--white); }
+        .coffee-section .section-label { color: var(--beige); }
+        .coffee-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem;
+            background: rgba(255,255,255,0.02);
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .coffee-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.9rem 1.5rem;
+            background: rgba(255,255,255,0.03);
+            border-left: 2px solid var(--gold);
+            transition: var(--transition-smooth);
+            cursor: default;
+        }
+        .coffee-item:hover {
+            background: rgba(255,255,255,0.07);
+            transform: translateX(6px);
+            border-left-color: var(--gold-light);
+        }
+        .coffee-name { font-family: var(--heading); font-size: 1.05rem; font-weight: 500; }
+        .coffee-price { font-weight: 600; color: var(--gold); font-size: 0.95rem; }
+
+        /* ----- PIZZA ----- */
+        .pizza-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            margin: 2rem 0;
+        }
+        .pizza-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0.5rem;
+            border-bottom: 1px solid rgba(58, 41, 34, 0.08);
+            transition: var(--transition-smooth);
+            cursor: default;
+        }
+        .pizza-item:hover {
+            padding-left: 1rem;
+            border-bottom-color: var(--gold);
+            background: rgba(185, 149, 91, 0.04);
+        }
+        .pizza-name { font-family: var(--heading); font-size: 1.1rem; font-weight: 500; }
+        .pizza-price { font-weight: 600; color: var(--gold); font-size: 0.95rem; }
+
+        /* ----- BAKERY CARDS ----- */
+        .bakery-card {
+            position: relative;
+            overflow: hidden;
+            height: 340px;
+            border-radius: 0;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-smooth);
+        }
+        .bakery-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+        .bakery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+        .bakery-card:hover img { transform: scale(1.08); }
+        .bakery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(to top, rgba(26,23,22,0.9) 0%, transparent 100%);
+            color: var(--white);
+            transform: translateY(60%);
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .bakery-card:hover .bakery-overlay { transform: translateY(0); }
+        .bakery-overlay h4 { font-size: 1.4rem; margin-bottom: 0.3rem; font-weight: 600; }
+        .bakery-overlay p { font-size: 0.9rem; opacity: 0.8; font-weight: 300; margin: 0; }
+
+        /* ----- TESTIMONIALS ----- */
+        .testimonial-card {
+            background: var(--ivory);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-smooth);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+        .testimonial-card .stars {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+        .testimonial-card p {
+            font-size: 1.05rem;
+            font-weight: 300;
+            font-style: italic;
+            margin: 1rem 0;
+            line-height: 1.7;
+        }
+        .testimonial-card h5 {
+            font-family: var(--body);
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--gold);
+            margin: 0;
+        }
+        .testimonial-card .role {
+            font-size: 0.75rem;
+            color: #999;
+            font-weight: 300;
+        }
+        .testimonial-swiper {
+            padding: 2rem 0;
+        }
+        .swiper-pagination-bullet {
+            background: var(--gold) !important;
+            opacity: 0.4;
+        }
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+
+        /* ----- TRUST BADGES ----- */
+        .trust-badge {
+            text-align: center;
+            padding: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+        .trust-badge:hover {
+            transform: translateY(-6px);
+        }
+        .trust-badge i {
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .trust-badge h6 {
+            font-family: var(--body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--espresso);
+            margin: 0;
+        }
+        .trust-badge p {
+            font-size: 0.75rem;
+            color: #999;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        /* ----- EXPERIENCE ----- */
+        .exp-card {
+            padding: 3.5rem 2rem;
+            background: var(--white);
+            text-align: center;
+            transition: var(--transition-smooth);
+            height: 100%;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 3px solid transparent;
+        }
+        .exp-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-bottom-color: var(--gold);
+        }
+        .exp-card i {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            transition: var(--transition-smooth);
+            display: block;
+        }
+        .exp-card:hover i { transform: scale(1.1) rotate(-2deg); }
+        .exp-card h4 { font-size: 1.4rem; font-weight: 600; margin-bottom: 0.8rem; }
+        .exp-card p { font-size: 0.95rem; color: #7A7A7A; font-weight: 300; margin: 0; }
+
+        /* ----- NEWSLETTER ----- */
+        .newsletter-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            background: rgba(255,255,255,0.08);
+            color: var(--white);
+            font-family: var(--body);
+            border-radius: 0;
+        }
+        .newsletter-form input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+        .newsletter-form input:focus {
+            outline: none;
+            background: rgba(255,255,255,0.12);
+        }
+        .newsletter-form .btn-premium {
+            padding: 0.8rem 2rem;
+        }
+
+        /* ----- VISIT ----- */
+        .visit-section { background: var(--ivory); }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 0.8rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition-smooth);
+        }
+        .contact-item:hover {
+            background: rgba(185, 149, 91, 0.06);
+            transform: translateX(6px);
+        }
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--gold);
+            width: 2.8rem;
+            margin-top: 0.1rem;
+            flex-shrink: 0;
+        }
+        .contact-item h5 { font-size: 1.1rem; margin-bottom: 0.2rem; font-weight: 600; }
+        .contact-item p { font-size: 0.95rem; color: #6B6B6B; margin: 0; }
+
+        /* ----- RESERVATION ----- */
+        .reserve-section {
+            background: var(--charcoal);
+            color: var(--white);
+            position: relative;
+        }
+        .reserve-section .section-heading { color: var(--white); }
+        .reserve-section .section-label { color: var(--beige); }
+        .reserve-section .btn-premium {
+            border-color: var(--gold);
+        }
+        .reserve-section .btn-outline {
+            border-color: rgba(255,255,255,0.3);
+            color: var(--white);
+        }
+        .reserve-section .btn-outline::before { background: var(--white); }
+        .reserve-section .btn-outline:hover { color: var(--charcoal); border-color: var(--white); }
+
+        /* ----- LEGAL PAGES (Footer) ----- */
+        .legal-links a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 0.75rem;
+            transition: var(--transition-smooth);
+            margin: 0 0.5rem;
+        }
+        .legal-links a:hover { color: var(--gold); }
+
+        /* ----- FOOTER ----- */
+        .footer {
+            background: var(--charcoal);
+            color: rgba(255,255,255,0.7);
+            padding: 5rem 0 2.5rem;
+        }
+        .footer .brand-main { color: var(--white); font-size: 1.8rem; }
+        .footer .brand-sub { color: var(--gold); }
+        .footer h5 {
+            color: var(--white);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .footer-links a, .footer-contact a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.6rem;
+            transition: var(--transition-smooth);
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+        .footer-links a:hover { color: var(--gold); transform: translateX(6px); }
+        .footer-contact a:hover { color: var(--gold); transform: translateX(6px); }
+        .footer-contact a i { width: 1.5rem; color: var(--gold); }
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border: 1px solid rgba(255,255,255,0.12);
+            color: var(--white);
+            transition: var(--transition-smooth);
+            margin-right: 0.5rem;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .social-icons a:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(185, 149, 91, 0.3);
+        }
+
+        /* ----- AOS Overrides ----- */
+        [data-aos] {
+            will-change: transform, opacity;
+        }
+
+        /* ----- Responsive ----- */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: var(--espresso);
+                padding: 2rem;
+                margin-top: 1rem;
+                box-shadow: var(--shadow-lg);
+            }
+            .navbar-le.scrolled .navbar-collapse { background: var(--ivory); }
+            .nav-cta { margin-top: 1.5rem; }
+            .nav-link { color: var(--white) !important; padding: 0.6rem 0; }
+            .navbar-le.scrolled .nav-link { color: var(--espresso) !important; }
+            .nav-link::after { bottom: 0; }
+        }
+        @media (max-width: 576px) {
+            .coffee-grid { grid-template-columns: 1fr; padding: 1rem; }
+            .pizza-grid { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .section-heading { font-size: 1.9rem; }
+            .btn-premium, .btn-hero-primary, .btn-hero-outline { padding: 0.8rem 2rem; font-size: 0.7rem; }
+            .back-to-top { bottom: 80px; right: 10px; width: 38px; height: 38px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== PRELOADER ===== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-le" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-main">LE MARCEL</span>
+                <span class="brand-sub">CAFÉ · BAKERY</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bakery.html">Bakery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#visit">Visit</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#reserve" class="btn btn-reserve-nav">Reserve a Table</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="container hero-content">
+            <span class="hero-label">Le Marcel Café & Bakery</span>
+            <h1>Good Coffee.<br>Great Food.<br>Beautiful Moments.</h1>
+            <p>Artisan coffee, handcrafted sandwiches, sourdough pizzas, indulgent desserts and freshly baked delights — served in a space made for slowing down.</p>
+            <div class="hero-buttons d-flex flex-wrap justify-content-center gap-3">
+                <a href="menu.html" class="btn-hero-primary">Explore Menu</a>
+                <a href="#visit" class="btn-hero-outline">Visit Us</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===== INTRO / STORY ===== -->
+    <section id="story" data-aos="fade-up" data-aos-duration="800">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" alt="Cafe Interior" class="img-fluid" style="height:500px; width:100%; object-fit:cover; box-shadow: var(--shadow-md);" loading="lazy">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <span class="section-label">A Little Taste of Le Marcel</span>
+                    <h2 class="section-heading">Where Coffee Meets Good Food</h2>
+                    <p class="mb-4" style="font-size:1.05rem; font-weight:300; line-height:1.9;">Welcome to Le Marcel Cafe & Bakery — where freshly brewed coffee meets handcrafted food and bakery indulgence. From signature sandwiches and sourdough pizzas to rich chocolate shakes and freshly prepared desserts, every plate is made to bring people together.</p>
+                    <a href="#" class="btn-premium">Discover Our Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRUST BADGES ===== -->
+    <section style="background: var(--white); padding: 4rem 0;">
+        <div class="container">
+            <div class="row g-4" data-aos="fade-up">
+                <div class="col-6 col-md-3 trust-badge">
+                    <i class="fas fa-award"></i>
+                    <h6>Award Winning</h6>
+                    <p>Best Cafe 2024</p>
+                </div>
+                <div class="col-6 col-md-3 trust-badge">
+                    <i class="fas fa-leaf"></i>
+                    <h6>Fresh Ingredients</h6>
+                    <p>Farm to table</p>
+                </div>
+                <div class="col-6 col-md-3 trust-badge">
+                    <i class="fas fa-heart"></i>
+                    <h6>Loved by Many</h6>
+                    <p>4.9/5 rating</p>
+                </div>
+                <div class="col-6 col-md-3 trust-badge">
+                    <i class="fas fa-trophy"></i>
+                    <h6>Quality Promise</h6>
+                    <p>Satisfaction guaranteed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MENU HIGHLIGHTS ===== -->
+    <section id="menu" style="background: var(--white);">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up" data-aos-duration="800">
+                <span class="section-label">Our Favourites</span>
+                <h2 class="section-heading">A few of the dishes our guests keep coming back for.</h2>
+                <p class="section-subheading">Each dish is crafted with passion, using the finest ingredients to create unforgettable flavors.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+                    <div class="food-card position-relative">
+                        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&q=80" class="food-card-img w-100" alt="Bombay Sandwich" loading="lazy">
+                        <span class="badge-popular">Popular</span>
+                        <div class="food-card-body">
+                            <h5 class="food-card-title">Bombay Sandwich</h5>
+                            <p class="food-card-desc">Spiced potato, cucumber, tomatoes with mint chutney</p>
+                            <span class="food-card-price">₹200</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="150">
+                    <div class="food-card position-relative">
+                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&q=80" class="food-card-img w-100" alt="Hot Chocolate" loading="lazy">
+                        <span class="badge-popular">Popular</span>
+                        <div class="food-card-body">
+                            <h5 class="food-card-title">Hot Chocolate</h5>
+                            <p class="food-card-desc">Rich Belgian chocolate with whipped cream</p>
+                            <span class="food-card-price">₹220</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+                    <div class="food-card position-relative">
+                        <img src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=600&q=80" class="food-card-img w-100" alt="Peri Peri Fries" loading="lazy">
+                        <span class="badge-popular">Popular</span>
+                        <div class="food-card-body">
+                            <h5 class="food-card-title">Peri Peri Fries</h5>
+                            <p class="food-card-desc">Crispy fries tossed in spicy peri peri seasoning</p>
+                            <span class="food-card-price">₹240</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="250">
+                    <div class="food-card position-relative">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" class="food-card-img w-100" alt="Pizza" loading="lazy">
+                        <span class="badge-popular">Popular</span>
+                        <div class="food-card-body">
+                            <h5 class="food-card-title">Smoked Chicken Pizza</h5>
+                            <p class="food-card-desc">Sourdough crust with smoked chicken and cheese</p>
+                            <span class="food-card-price">₹420</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===== ONLY ONE "VIEW FULL MENU" BUTTON ===== -->
+            <div class="text-center mt-5">
+                <a href="menu.html" class="btn-premium">View Full Menu <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SIGNATURE COFFEE ===== -->
+    <section class="coffee-section" id="coffee">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+                    <span class="section-label">Your Coffee. Your Moment.</span>
+                    <h2 class="section-heading">From a bold espresso to a creamy cappuccino, find your perfect cup.</h2>
+                    <p style="font-weight:300; opacity:0.8; margin-bottom:1.5rem;">Every cup is crafted with care, using expertly roasted beans to bring out the richest flavors.</p>
+                    <a href="menu.html" class="btn-premium btn-gold mt-2">Explore Coffee</a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+                    <div class="coffee-grid">
+                        <div class="coffee-item"><span class="coffee-name">Espresso</span><span class="coffee-price">₹90</span></div>
+                        <div class="coffee-item"><span class="coffee-name">Americano</span><span class="coffee-price">₹140</span></div>
+                        <div class="coffee-item"><span class="coffee-name">Cappuccino</span><span class="coffee-price">₹180</span></div>
+                        <div class="coffee-item"><span class="coffee-name">Latte</span><span class="coffee-price">₹190</span></div>
+                        <div class="coffee-item"><span class="coffee-name">Macchiato</span><span class="coffee-price">₹160</span></div>
+                        <div class="coffee-item"><span class="coffee-name">Mocha</span><span class="coffee-price">₹240</span></div>
+                        <div class="coffee-item"><span class="coffee-name">Irish</span><span class="coffee-price">₹260</span></div>
+                        <div class="coffee-item"><span class="coffee-name">Affogato</span><span class="coffee-price">₹220</span></div>
+                        <div class="coffee-item"><span class="coffee-name">Matcha Latte</span><span class="coffee-price">₹280</span></div>
+                        <div class="coffee-item"><span class="coffee-name">Hot Chocolate</span><span class="coffee-price">₹220</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOURDOUGH PIZZA ===== -->
+    <section id="pizza" style="background: var(--ivory);">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 order-lg-2" data-aos="fade-left" data-aos-duration="800">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80" alt="Pizza" class="img-fluid" style="height:450px; width:100%; object-fit:cover; box-shadow: var(--shadow-md);" loading="lazy">
+                </div>
+                <div class="col-lg-6 order-lg-1" data-aos="fade-right" data-aos-duration="800">
+                    <span class="section-label">Sourdough. Smoky. Extraordinary.</span>
+                    <h2 class="section-heading">Artisan pizzas with a rustic sourdough crust.</h2>
+                    <p style="font-weight:300; line-height:1.9;">Our artisan pizzas start with a rustic sourdough crust and are finished with bold combinations of cheese, vegetables, smoked meats and house-made sauces.</p>
+                    <div class="pizza-grid">
+                        <div class="pizza-item"><span class="pizza-name">Margherita</span><span class="pizza-price">₹350</span></div>
+                        <div class="pizza-item"><span class="pizza-name">Burrata Pesto</span><span class="pizza-price">₹600</span></div>
+                        <div class="pizza-item"><span class="pizza-name">Smoked Paneer</span><span class="pizza-price">₹400</span></div>
+                        <div class="pizza-item"><span class="pizza-name">Fromage</span><span class="pizza-price">₹650</span></div>
+                        <div class="pizza-item"><span class="pizza-name">Pepperoni</span><span class="pizza-price">₹420</span></div>
+                        <div class="pizza-item"><span class="pizza-name">Smoked Chicken</span><span class="pizza-price">₹420</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BAKERY ===== -->
+    <section id="bakery" style="background: var(--white);">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up" data-aos-duration="800">
+                <span class="section-label">Something Sweet?</span>
+                <h2 class="section-heading">End your meal with something worth remembering.</h2>
+                <p class="section-subheading">From classic cakes to decadent chocolate creations, every bite is a moment of pure bliss.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                    <div class="bakery-card">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="Carrot Cake" loading="lazy">
+                        <div class="bakery-overlay">
+                            <h4>Carrot Cake</h4>
+                            <p>Moist with cream cheese frosting</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+                    <div class="bakery-card">
+                        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&q=80" alt="Chocolate Almond" loading="lazy">
+                        <div class="bakery-overlay">
+                            <h4>Chocolate Almond</h4>
+                            <p>Rich chocolate with roasted almonds</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                    <div class="bakery-card">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="Nutella" loading="lazy">
+                        <div class="bakery-overlay">
+                            <h4>Chocolate Nutella</h4>
+                            <p>Decadent with Nutella filling</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
+                    <div class="bakery-card">
+                        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&q=80" alt="Desserts" loading="lazy">
+                        <div class="bakery-overlay">
+                            <h4>Fresh Desserts</h4>
+                            <p>Daily baked pastries & sweets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===== VIEW BAKERY BUTTON ===== -->
+            <div class="text-center mt-5">
+                <a href="bakery.html" class="btn-premium">View Full Bakery <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section style="background: var(--ivory);" id="testimonials">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up" data-aos-duration="800">
+                <span class="section-label">What Our Guests Say</span>
+                <h2 class="section-heading">Kind words from happy guests.</h2>
+                <p class="section-subheading">Real reviews from real people who've experienced Le Marcel.</p>
+            </div>
+            <div class="swiper testimonial-swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"The best coffee in town! The sourdough pizza is absolutely divine. Can't wait to come back!"</p>
+                            <h5>— Sarah M.</h5>
+                            <span class="role">Food Blogger</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Incredible food and a cozy atmosphere. Perfect for weekend brunches with friends and family."</p>
+                            <h5>— Raj K.</h5>
+                            <span class="role">Regular Customer</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"The bakery items are out of this world. Can't resist their chocolate almond cake! Highly recommend."</p>
+                            <h5>— Priya S.</h5>
+                            <span class="role">Bakery Enthusiast</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Amazing service and even better food. The peri peri fries are a must-try! Le Marcel is my new favorite spot."</p>
+                            <h5>— Amit R.</h5>
+                            <span class="role">Foodie</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Such a beautiful café with a warm vibe. The coffee is exceptional and the staff is incredibly friendly."</p>
+                            <h5>— Maria G.</h5>
+                            <span class="role">Tourist</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section style="background: var(--white);">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up" data-aos-duration="800">
+                <span class="section-label">More Than Just Coffee</span>
+                <h2 class="section-heading">The Le Marcel Experience</h2>
+                <p class="section-subheading">We believe in creating moments that linger long after the last sip.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                    <div class="exp-card">
+                        <i class="fas fa-coffee"></i>
+                        <h4>Crafted Coffee</h4>
+                        <p>Carefully prepared coffee for every kind of coffee lover.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+                    <div class="exp-card">
+                        <i class="fas fa-bread-slice"></i>
+                        <h4>Artisan Food</h4>
+                        <p>Freshly prepared sandwiches, sourdough pizzas and café favourites.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                    <div class="exp-card">
+                        <i class="fas fa-heart"></i>
+                        <h4>Made For Moments</h4>
+                        <p>A cozy place for conversations, work, dates and celebrations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section style="background: var(--espresso); color: var(--white);">
+        <div class="container text-center" data-aos="fade-up">
+            <span class="section-label" style="color: var(--beige);">Stay in Touch</span>
+            <h2 class="section-heading" style="color: var(--white);">Subscribe to Our Newsletter</h2>
+            <p style="opacity: 0.7; max-width: 500px; margin: 0 auto 2rem;">Get updates on new menu items, special events, and exclusive offers.</p>
+            <form class="newsletter-form" style="max-width: 500px; margin: 0 auto; display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;" onsubmit="event.preventDefault(); alert('Thanks for subscribing! 🎉'); this.reset();">
+                <input type="email" placeholder="Your email address" required aria-label="Email address">
+                <button type="submit" class="btn-premium btn-gold" style="padding: 0.8rem 2rem;">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== VISIT US ===== -->
+    <section class="visit-section" id="visit">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+                    <span class="section-label">Come Say Bonjour</span>
+                    <h2 class="section-heading">Visit Le Marcel</h2>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div><h5>Address</h5><p>123 Café Street, Food District, Mumbai 400001</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div><h5>Phone</h5><p>+91 98765 43210</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div><h5>Opening Hours</h5><p>Mon - Sun: 8:00 AM – 11:00 PM</p></div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#" class="btn-premium btn-gold" onclick="event.preventDefault(); alert('Getting directions... 🗺️');">Get Directions</a>
+                        <a href="tel:+919876543210" class="btn-premium btn-outline">Call Now</a>
+                        <a href="https://wa.me/919876543210?text=Hi%20Le%20Marcel%2C%20I%20would%20like%20to%20reserve%20a%20table." target="_blank" class="btn-premium" style="background:#25D366; border-color:#25D366; color:white;">WhatsApp Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+                    <div style="box-shadow: var(--shadow-md); border: 4px solid var(--white);">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.123456789!2d72.8777!3d19.0760!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c7f5a5a5a5a5%3A0x1234567890abcdef!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RESERVATION ===== -->
+    <section class="reserve-section" id="reserve">
+        <div class="container text-center" data-aos="fade-up" data-aos-duration="800">
+            <span class="section-label">Planning a Visit?</span>
+            <h2 class="section-heading">Reserve your table or simply drop us a message. We'd love to have you.</h2>
+            <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+                <a href="https://wa.me/919876543210?text=Hi%20Le%20Marcel%2C%20I%20would%20like%20to%20reserve%20a%20table." target="_blank" class="btn-premium btn-gold">Reserve a Table</a>
+                <a href="https://wa.me/919876543210" target="_blank" class="btn-premium btn-outline">Chat on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="brand-main">LE MARCEL</div>
+                    <span class="brand-sub">CAFÉ · BAKERY</span>
+                    <p class="mt-3" style="color:rgba(255,255,255,0.6); font-weight:300;">Good Coffee. Great Food. Beautiful Moments.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/919876543210" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="menu.html">Menu</a>
+                        <a href="bakery.html">Bakery</a>
+                        <a href="#testimonials">Reviews</a>
+                        <a href="#visit">Visit Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Contact</h5>
+                    <div class="footer-contact">
+                        <a href="tel:+919876543210"><i class="fas fa-phone"></i>+91 98765 43210</a>
+                        <a href="mailto:hello@lemarcel.com"><i class="fas fa-envelope"></i>hello@lemarcel.com</a>
+                        <a href="#" onclick="event.preventDefault();"><i class="fas fa-map-marker-alt"></i>123 Café Street, Mumbai</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-4 mt-4" style="border-top:1px solid rgba(255,255,255,0.06);">
+                <p class="small" style="color:rgba(255,255,255,0.35); font-weight:300;">
+                    &copy; <span id="currentYear">2026</span> Le Marcel Cafe & Bakery. All Rights Reserved.
+                </p>
+                <div class="legal-links">
+                    <a href="#" onclick="event.preventDefault(); alert('Privacy Policy page would open here.');">Privacy Policy</a>
+                    <a href="#" onclick="event.preventDefault(); alert('Terms of Service page would open here.');">Terms of Service</a>
+                    <a href="#" onclick="event.preventDefault(); alert('Cookie Policy page would open here.');">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== MOBILE BOTTOM BAR ===== -->
+    <div class="mobile-bottom-bar">
+        <a href="index.html" class="active"><i class="fas fa-home"></i>Home</a>
+        <a href="menu.html"><i class="fas fa-utensils"></i>Menu</a>
+        <a href="bakery.html"><i class="fas fa-bread-slice"></i>Bakery</a>
+        <a href="#testimonials"><i class="fas fa-star"></i>Reviews</a>
+        <a href="#visit"><i class="fas fa-map-pin"></i>Location</a>
+        <a href="https://wa.me/919876543210"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ===== COOKIE BANNER ===== -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button class="btn-premium btn-gold" id="acceptCookies">Accept</button>
+            <button class="btn-premium btn-outline" id="declineCookies">Decline</button>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ===== PRELOADER =====
+            window.addEventListener('load', function() {
+                document.getElementById('preloader').classList.add('hidden');
+            });
+
+            // ===== AOS =====
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out-cubic',
+                once: true,
+                offset: 50,
+                disable: 'mobile'
+            });
+
+            // ===== NAVBAR SCROLL =====
+            const nav = document.getElementById('mainNav');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 80) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            }, { passive: true });
+
+            // ===== BACK TO TOP =====
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            }, { passive: true });
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // ===== SMOOTH ANCHOR SCROLL =====
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1 && !this.hasAttribute('target')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // ===== MOBILE NAV CLOSE =====
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth < 992) {
+                        const collapse = document.querySelector('.navbar-collapse');
+                        const bs = bootstrap.Collapse.getInstance(collapse);
+                        if (bs) bs.hide();
+                    }
+                });
+            });
+
+            // ===== MOBILE BOTTOM BAR ACTIVE =====
+            document.querySelectorAll('.mobile-bottom-bar a').forEach(link => {
+                link.addEventListener('click', function() {
+                    document.querySelectorAll('.mobile-bottom-bar a').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // ===== TESTIMONIALS SWIPER =====
+            new Swiper('.testimonial-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                    }
+                }
+            });
+
+            // ===== DYNAMIC COPYRIGHT YEAR =====
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // ===== COOKIE BANNER =====
+            if (!localStorage.getItem('cookiesAccepted')) {
+                setTimeout(() => {
+                    document.getElementById('cookieBanner').classList.add('show');
+                }, 1500);
+            }
+            document.getElementById('acceptCookies').addEventListener('click', function() {
+                localStorage.setItem('cookiesAccepted', 'true');
+                document.getElementById('cookieBanner').classList.remove('show');
+            });
+            document.getElementById('declineCookies').addEventListener('click', function() {
+                document.getElementById('cookieBanner').classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>
